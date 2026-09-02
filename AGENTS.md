@@ -38,6 +38,16 @@ The app starts on `http://localhost:8080`. Home page `/` lets you create or join
 chat room lives at `/chat/{code}`. The H2 database file lives at `./data/copypaste.mv.db`
 (created on first run) so data survives restarts.
 
+### Docker
+
+```bash
+docker build -t universal-copypaste-api .
+docker run --rm -p 8080:8080 -v "$(pwd)/data:/app/data" universal-copypaste-api
+```
+
+Container data persistence uses `/app/data`, matching the app's `jdbc:h2:file:./data/copypaste`
+configuration.
+
 ## How to test
 
 ```bash

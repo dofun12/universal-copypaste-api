@@ -4,6 +4,9 @@ target/
 !**/src/test/**/target/
 .kotlin
 
+### Application data ###
+/data/
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml

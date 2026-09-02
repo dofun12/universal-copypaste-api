@@ -1,0 +1,9 @@
+.git
+.idea
+target
+data
+.mvn
+README*
+*.iml
+*.ipr
+*.iws
