@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:copypaste-test;DB_CLOSE_DELAY=-1
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+copypaste:
+  chat:
+    ttl: 24h
+    code-length: 5
+    cleanup-interval: 15m

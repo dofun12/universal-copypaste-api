@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{layout :: head('Chat ' + ${code})}"></head>
+<body class="d-flex flex-column vh-100 bg-body-tertiary" th:attr="data-chat-code=${code}">
+<div th:replace="~{layout :: navbar}"></div>
+
+<header class="border-bottom bg-white px-3 py-2 d-flex align-items-center justify-content-between">
+    <div>
+        <div class="text-muted small">Chat code</div>
+        <div class="d-flex align-items-center gap-2">
+            <span id="chat-code" class="fs-4 fw-bold font-monospace" th:text="${code}">AYBDC</span>
+            <button id="copy-code-btn" type="button" class="btn btn-sm btn-outline-secondary" title="Copy code">
+                Copy
+            </button>
+        </div>
+    </div>
+    <a th:href="@{/}" class="btn btn-sm btn-outline-danger">Leave</a>
+</header>
+
+<div id="connection-banner" class="alert alert-warning text-center py-1 mb-0 rounded-0 d-none" role="alert"></div>
+
+<main id="messages" class="flex-grow-1 overflow-auto px-3 py-3">
+    <div id="empty-state" class="text-center text-muted mt-5">
+        No messages yet. Send the first one!
+    </div>
+</main>
+
+<form id="composer" class="border-top bg-white p-2 d-flex gap-2">
+    <textarea id="message-input" class="form-control" rows="1" placeholder="Type a message or paste a link…"
+              autocomplete="off" required></textarea>
+    <button type="submit" class="btn btn-primary px-4">Send</button>
+</form>
+
+<div th:replace="~{layout :: scripts}"></div>
+<script th:src="@{/js/chat.js}"></script>
+</body>
+</html>

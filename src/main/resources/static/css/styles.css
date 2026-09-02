@@ -1,0 +1,37 @@
+html, body {
+    height: 100%;
+}
+
+#messages {
+    scroll-behavior: smooth;
+}
+
+.message-bubble {
+    max-width: 85%;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+.message-bubble .message-time {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.shared-image {
+    max-width: 100%;
+    max-height: 320px;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+#composer textarea {
+    resize: none;
+    max-height: 6rem;
+}
+
+@media (min-width: 576px) {
+    #messages {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
